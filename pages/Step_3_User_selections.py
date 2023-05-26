@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from datetime import datetime, timedelta
 
 
-st.header("Step 2. Data")
+st.header("Step 3. User selections anf final touches")
 st.write("""Almost there, the result starts to look presentable. But your know that you manager will be asking for period selection and the ability to compare more stocks. 
 
 1. Data :white_check_mark:

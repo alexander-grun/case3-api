@@ -88,7 +88,7 @@ st.divider()
 st.write("""Let's think, now we can fetch stock data and we also know how to build a chart with multiple selections:
 
 - let's combine these components together and build a chart with the ability to select stocks.
-- we can see that the data is too granular showing daily figures, we can smooth the chart by showing the last value of each month
+- we can see that the data is too granular showing daily figures, we can smooth the chart by showing the last value of each month. We need to do a bit of data preparation here. 
 - we also see that each time the page refreshes we fetch the data from API again, this is not a very good pattern as it put the load on API, so let's try to save the data to cache, it will be fetched once when the app is first opened.
 """)
 
@@ -189,6 +189,7 @@ stocks_selected = st.multiselect("Select stocks", clist)
 st.header("You selected: {}".format(", ".join(stocks_selected)))
 dfs = {stock: df[df["Symbol"] == stocks[stock]] for stock in stocks_selected}
 draw_plot(dfs)
+
 
 st.markdown("## Full Code:")
 st.code("""

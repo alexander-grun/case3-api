@@ -4,6 +4,13 @@ import plotly.graph_objects as go
 import yfinance as yf
 from datetime import datetime, timedelta
 
+st.header("Final assignement")
+st.write("""
+1. Make it so that the data is shown Quarterly instead of monthly
+2. While the closing price simply refers to the cost of shares at the end of the day, the adjusted closing price takes dividends, stock splits, and new stock offerings into account. Change Close price to Adjusted close price.
+3. Add error handling to avoid errors when wrong ticker is provided by user or when data is not found from API
+""")
+
 # Create a dictionary with stock symbols as keys and their corresponding data sources as values
 stocks = {
     "Apple": "AAPL",

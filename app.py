@@ -7,3 +7,16 @@ You will:
 - visualize the results 
 - iterate in this process and get the final result customized to the requirements
 """)
+
+st.subheader("Preparation")
+
+st.write("""In this project we will need the following libraries:
+- plotly
+- pandas
+- streamlit
+
+""")
+
+st.code("""
+pip install ADD LIBRARIES HERE
+""", language='python')

@@ -16,7 +16,7 @@ stocks = {
 @st.cache_data
 def fetch_data(stock, start_date, end_date):
     stock_data = yf.download(stock, start=start_date, end=end_date)["Close"]  # Adjust the date range as needed
-    stock_data = stock_data.resample('Q').last() # Resample data to get the last price of each quarter
+    stock_data = stock_data.resample('M').last() # Resample data to get the last price of each month
     stock_data = stock_data.reset_index()
     stock_data["Symbol"] = stock
     return stock_data
@@ -45,9 +45,9 @@ clist = list(stocks.keys())
 stocks_selected = st.multiselect("Select stock", clist)
 
 # Add checkbox to toggle normalization
-normalize_data = st.checkbox('Normalize data', value=True)
+normalize_data = st.checkbox('Normalize data', value=False)
 
-if len(stocks_selected) > 1 and normalize_data:
+if normalize_data:
     df["Close"] = (df["Close"] / df.groupby("Symbol")["Close"].transform('first')) * 100  # Normalize to percentage change from first date
 
 st.header("You selected: {}".format(", ".join(stocks_selected)))

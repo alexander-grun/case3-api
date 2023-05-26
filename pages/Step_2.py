@@ -1,44 +1,44 @@
 import pandas as pd
 import streamlit as st
 import plotly.express as px
+import yfinance as yf
 import plotly.graph_objects as go
 
 
+st.header("Step 2. Data")
+st.write("""We did a lot of things, let's come back to our initial plan and check what should we figure out next.
+
+1. Data
+2. Chart :white_check_mark:
+3. Ability to display selected values (interactivity) :white_check_mark:
+4. Ability to add new values dynamically
+5. Ability to select time periods
+
+Now that we can create charts with interactivity, let's focus on the stock market data that we need.
+""")
+
+st.write("""Luckily there some APIs that offer stock market data. To make things even easier there are libraries written to interract with these APIs in Python. We will use 'yfinance' which is an open-source tool that uses Yahoo's publicly available APIs, and is intended for research and educational purposes. https://pypi.org/project/yfinance/
+
+Please remember that the yfinance package may not always be able to retrieve data due to changes in Yahoo Finance's website. It's recommended to use official APIs (like Alpha Vantage or IEX Cloud) for commercial applications. These generally require an API key but provide more stable and reliable service. """)
 
 
+# Set the title of the app
+st.header('Apple Stock Data Visualization')
 
-def plot():
-    # Load the gapminder dataset into a DataFrame
-    df = pd.DataFrame(px.data.gapminder())
+# Define the ticker symbol
+tickerSymbol = 'AAPL'
 
-    # Extract the unique countries from the DataFrame
-    clist = df["country"].unique().tolist()
+# Get data on the specified ticker
+tickerDf = yf.download(tickerSymbol, start='2010-5-31', end='2023-5-31')
 
-    # Allow the user to select multiple countries
-    countries = st.multiselect("Select country", clist)
+# Show entire historical data in a table
+st.write("""
+## Complete historical data
+""")
+st.dataframe(tickerDf)
 
-    # Display the selected countries as a header
-    st.header("You selected: {}".format(", ".join(countries)))
-
-    # Create a dictionary of DataFrames, with each country as the key
-    dfs = {country: df[df["country"] == country] for country in countries}
-
-    # Create an empty figure
-    fig = go.Figure()
-
-    # Add a scatter plot for each country to the figure
-    for country, df in dfs.items():
-        fig = fig.add_trace(go.Scatter(x=df["year"], y=df["gdpPercap"], name=country))
-
-    # Update the layout to include a chart title
-    fig.update_layout(
-        title="GDP Per Capita Over Time",
-        xaxis_title="Year",
-        yaxis_title="GDP Per Capita"
-    )
-
-    # Display the figure using Plotly in Streamlit
-    st.plotly_chart(fig)
+# Plotting data using plotly
+fig = px.line(tickerDf, x=tickerDf.index, y="Close", title='Apple Close Price Over Time')
+st.plotly_chart(fig)
 
 
-plot()

@@ -15,7 +15,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 
 
 st.header("Step 1. Creating Charts")
-st.write("""Your manager saw a nice-looking line chart with the ability to select any number of variables and show historical data. He wants you to build the prototype for the case you are working with. Your customers are mostly interested to invest in big tech stocks and the SP500 index, so you need to analyze the performance of those and also be able to compare other stocks to these benchmarks visually. 
+st.write("""Your manager saw a nice-looking line chart with the ability to select any number of variables and show historical data. He wants you to build the prototype for the case you are working with. Your customers are mostly interested in investing in big tech stocks and the SP500 index, so you need to analyze the performance of those and also be able to compare other stocks to these benchmarks visually. 
 
 To solve this complex problem, we need to break it down into smaller pieces and then assemble the final solution. Here are some components which we need to figure out:
 

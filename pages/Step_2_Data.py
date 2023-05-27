@@ -5,6 +5,16 @@ import yfinance as yf
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 
+st.set_page_config(layout="wide")
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 st.header("Step 2. Data")
 st.write("""We did a lot of things, let's come back to our initial plan and check what should we figure out next.

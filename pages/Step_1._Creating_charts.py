@@ -3,6 +3,16 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
+st.set_page_config(layout="wide")
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 st.header("Step 1. Creating Charts")
 st.write("""Your manager saw a nice-looking line chart with the ability to select any number of variables and show historical data. He wants you to build the prototype for the case you are working with. Your customers are mostly interested to invest in big tech stocks and the SP500 index, so you need to analyze the performance of those and also be able to compare other stocks to these benchmarks visually. 

@@ -1,5 +1,15 @@
 import streamlit as st
 
+st.set_page_config(layout="wide")
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 st.write("""In this case you will practice data retrieval and manipulation with Python. 
 You will:
 - retrieve the data from API

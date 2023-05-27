@@ -49,8 +49,8 @@ st.write("""Almost there, the result starts to look presentable. But your know t
 1. Data :white_check_mark:
 2. Chart :white_check_mark:
 3. Ability to display selected values (interactivity) :white_check_mark:
-4. Ability to add new values dynamically
-5. Ability to select time periods
+4. Ability to add new values dynamically :white_check_mark:
+5. Ability to select time periods :white_check_mark:
 
 Let's focus on the remaining components and also polish the solution as we go.
 """)

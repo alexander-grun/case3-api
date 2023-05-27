@@ -17,7 +17,15 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 st.header("Final assignement")
 if st.button('Celebrate!'):
     st.balloons()
-st.write("Well done! You have just created an interactive dashboard using real API data in Python, this is awesome! Don't stop here, think about how can you use these skills in your own projects or how can it help at work. ")
+st.write("""Well done! 
+         
+    1. Data :white_check_mark:
+    2. Chart :white_check_mark:
+    3. Ability to display selected values (interactivity) :white_check_mark:
+    4. Ability to add new values dynamically :white_check_mark:
+    5. Ability to select time periods :white_check_mark:         
+           
+    You have just created an interactive dashboard using real API data in Python, this is awesome! Don't stop here, think about how can you use these skills in your own projects or how can it help at work. """)
 
 st.write("To complete these assignement add ")
 st.write("""

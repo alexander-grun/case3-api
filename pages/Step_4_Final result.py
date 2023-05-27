@@ -17,7 +17,7 @@ st.markdown(hide_st_style, unsafe_allow_html=True)
 st.header("Final assignement")
 if st.button('Celebrate!'):
     st.balloons()
-st.write("""Well done! 
+st.write("""Well done! All components are complete.
          
 1. Data :white_check_mark:
 2. Chart :white_check_mark:

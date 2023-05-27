@@ -193,7 +193,7 @@ draw_plot(dfs)
 
 st.markdown("## Full Code:")
 st.code("""
-    import streamlit as st
+import streamlit as st
 import pandas as pd
 import yfinance as yf
 import plotly.graph_objects as go

@@ -27,11 +27,11 @@ st.write("""Well done! All components are complete.
            
 You have just created an interactive dashboard using real API data in Python, this is awesome! Don't stop here, think about how can you use these skills in your own projects or how can it help at work. """)
 
-st.write("To complete this assignement add three small changes on your own")
+st.write("To complete this assignment add three small changes on your own:")
 st.write("""
 1. Make it so that the data is shown Quarterly instead of monthly
 2. While the closing price simply refers to the cost of shares at the end of the day, the adjusted closing price takes dividends, stock splits, and new stock offerings into account. Change Close price to Adjusted close price.
-3. Add error handling to avoid errors when wrong ticker is provided by user or when data is not found from API
+3. Add error handling to avoid errors when the wrong ticker is provided by user or when data is not found from API
 
 You can see these implemented below
 """)
